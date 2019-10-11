@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { AuthService } from 'src/app/shared/services/auth.service';
+import {Message} from '../../shared/models/message.model';
 import { UsersService } from 'src/app/shared/services/users.servise';
 import {User} from '../../shared/models/user.model';
-import {Message} from '../../shared/models/message.model';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +15,9 @@ import {Message} from '../../shared/models/message.model';
 export class LoginComponent implements OnInit {
 form: FormGroup;
 message: Message;
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService,
+    private authService: AuthService,
+    private router: Router) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -35,7 +40,9 @@ message: Message;
     .subscribe((user: User) => {
     if (user) {
       if (user.password === formData.password) {
-        this.showMessage('yes', 'succes');
+        window.localStorage.setItem('user', JSON.stringify(user));
+        this.authService.login();
+     //   this.router.navigate([''])
       } else {
         this.showMessage('wrong pass');
       }
