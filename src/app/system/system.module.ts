@@ -11,10 +11,10 @@ import { SystemComponent } from './system.component';
 
 @NgModule({
     imports: [CommonModule, SharedModule, SystemRoutingModule],
-    declarations: [BillPageComponent, 
-        HistoryPageComponent, 
-        PlanningPageComponent, 
-        RecordsPageComponent, 
+    declarations: [BillPageComponent,
+        HistoryPageComponent,
+        PlanningPageComponent,
+        RecordsPageComponent,
         SystemComponent],
 })
 
