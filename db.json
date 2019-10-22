@@ -5,6 +5,12 @@
       "email": "kateryna.bugaieva@satellytes.com",
       "password": "12345678",
       "name": "Администратор"
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "123456",
+      "name": "bsdba",
+      "id": 2
     }
   ],
   "bill": {

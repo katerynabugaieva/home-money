@@ -18,9 +18,9 @@ export class LoginComponent implements OnInit {
   message: Message;
 
   constructor(private usersService: UsersService,
-              private authService: AuthService,
-              private router: Router,
-              private route: ActivatedRoute) {
+    private authService: AuthService,
+    private router: Router,
+    private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       .subscribe((params: Params) => {
         if (params['nowCanLogin']) {
           this.showMessage({
-            text: 'Теперь вы можете зайти в систему',
+            text: ' Now you can login',
             type: 'success'
           });
         }
