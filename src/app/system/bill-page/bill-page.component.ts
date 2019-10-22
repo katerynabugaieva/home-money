@@ -8,7 +8,7 @@ import { Bill } from '../shared/models/bill.model';
   templateUrl: './bill-page.component.html',
   styleUrls: ['./bill-page.component.css']
 })
-export class BillPageComponent implements OnInit, OnDestroy {
+export class BillPageComponent implements OnInit {
   private subscription: Subscription;
   constructor(private billService: BillService) { }
 
@@ -20,7 +20,8 @@ export class BillPageComponent implements OnInit, OnDestroy {
       console.log(data);
     });
   }
-ngOnDestroy() {
-  this.subscription.unsubscribe();
-}
+  /* ngOnDestroy() {
+     this.subscription.unsubscribe();
+   }
+ */
 }

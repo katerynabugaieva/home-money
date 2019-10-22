@@ -10,8 +10,8 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-date: Date = new Date();
-user: User;
+  date: Date = new Date();
+  user: User;
   constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -19,8 +19,8 @@ user: User;
   }
 
   onLogout() {
-   this.auth.logout();
-   this.router.navigate(['/login']);
+    this.auth.logout();
+    this.router.navigate(['/login']);
   }
 
 }
