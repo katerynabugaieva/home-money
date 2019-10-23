@@ -29,16 +29,18 @@ export class BillPageComponent implements OnInit {
 
   onRefresh() {
     this.isLoaded = false
-    this.billService.getCurrency()
+    this.sub2 = this.billService.getCurrency()
       .subscribe((currency: any) => {
         this.currency = currency;
       })
   }
 
   /*
-  ngOnDestroy() {
-    this.sub1.unsubscribe();
-    this.sub2.unsubscribe();
-  }
- */
+    ngOnDestroy() {
+      this.sub1.unsubscribe();
+      if (this.sub2) {
+        this.sub2.unsubscribe();
+      }
+    }
+  */
 }
