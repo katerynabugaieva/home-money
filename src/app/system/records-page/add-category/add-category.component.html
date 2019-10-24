@@ -5,16 +5,18 @@
         </div>
     </div>
     <div class="card-block">
-        <form>
-            <div class="form-group has-error">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="form-group" [ngClass]="{'has-error': name.invalid && name.touched}">
                 <label class="control-label" for="category-name">Input name</label>
-                <input type="text" id="category-name" class="form-control">
-                <span class="form-help-text">Validation error</span>
+                <input type="text" id="category-name" class="form-control" required #name='ngModel' name='name' ngModel>
+                <span class="form-help-text" *ngIf="name.invalid && name.touched">Name shouldn't be empty</span>
             </div>
-            <div class="form-group has-success">
+            <div class="form-group" [ngClass]="{'has-error': capacity.invalid && capacity.touched}">
                 <label class="control-label" for="category-value">Input limit</label>
-                <input type="number" value="0" id="category-value" class="form-control">
-                <span class="form-help-text">Validation without error</span>
+                <input type="number" id="category-value" class="form-control" [ngModel]="0" #capacity='ngModel'
+                    name='capacity' required min='1'>
+                <span class="form-help-text" *ngIf="capacity.invalid && capacity.touched">Capacity shouldn't be
+                    empty</span>
             </div>
             <button type="submit" class="btn btn-primary">Add</button>
         </form>
