@@ -19,7 +19,7 @@
   },
   "categories": [
     {
-      "name": "Дом",
+      "name": "Home",
       "capacity": 15000,
       "id": 1
     },
@@ -29,9 +29,14 @@
       "id": 2
     },
     {
-      "id": 3,
-      "name": "Машина",
-      "capacity": 7000
+      "name": "Car",
+      "capacity": 7000,
+      "id": 3
+    },
+    {
+      "name": "new category4",
+      "capacity": 12,
+      "id": 4
     }
   ],
   "events": [
